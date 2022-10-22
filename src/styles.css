@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+
+:root{
+    --amarillo: #f9dc5c;
+    --amarillo-claro: #fae588;
+    --cremita: #fcefb4;
+    --titulo: 'Dongle', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--amarillo-claro);
+}
+
+i {
+    font-size: 18px;
+}

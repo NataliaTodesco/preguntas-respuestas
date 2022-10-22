@@ -1,0 +1,12 @@
+<div class="card-body">
+    <h1 class="display-6">{{listPreguntas[preguntaService.indexPregunta].descripcion}}</h1>
+    <div class="list-group mt-4">
+        <a class="list-group-item list-group-item-action" *ngFor="let respuesta of listPreguntas[preguntaService.indexPregunta].respuestas; let i = index"
+         [ngClass]="Color(respuesta)" (click)="respuestaSeleccionada(respuesta,i)">
+            {{respuesta.nombre}}
+            <span *ngIf="iconCorrecta(respuesta)" class="badge float-right text-success"><i class="bi bi-check-circle"></i></span>
+            <span *ngIf="iconIncorrecta(respuesta)" class="badge float-right text-danger"><i class="bi bi-x"></i></span>
+        </a>
+      </div>
+    <app-botonera></app-botonera>
+</div>

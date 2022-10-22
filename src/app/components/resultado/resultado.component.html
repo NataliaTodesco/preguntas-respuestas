@@ -1,0 +1,21 @@
+<div class="card-body">
+    <h1 class="display-3">Resultado</h1>
+    <p class="lead mb-5">Este es el resultado del cuestionario</p>
+    <div *ngFor="let pregunta of listPregunta; let indice = index">
+        <h4 class="">{{pregunta.descripcion}}</h4>
+        <div class="list-group my-4">
+            <ng-container *ngFor="let respuesta of pregunta.respuestas; let i = index">
+                <a class="list-group-item list-group-item-action"
+                [ngClass]="{
+                    'list-group-item-success': respuesta.esCorrecta == 1 && respuestaUsuario[indice] == i,
+                    'list-group-item-danger': respuesta.esCorrecta == 0 && respuestaUsuario[indice] == i
+                }">
+                {{respuesta.nombre}}
+                <span *ngIf="respuestaUsuario[indice] == i && respuesta.esCorrecta == 1" class="badge float-right text-success"><i class="bi bi-check-circle"></i></span>
+                <span *ngIf="respuestaUsuario[indice] == i && respuesta.esCorrecta == 0" class="badge float-right text-danger"><i class="bi bi-x"></i></span>
+            </a>
+            </ng-container>
+          </div>
+    </div>
+    <button class="btn btn-lg btn-warning text-white mt-3 px-5" (click)="volver()"> Volver </button>
+</div>
